@@ -10,6 +10,8 @@ const Banner = styled.div`
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	margin-top: auto;
+	margin-bottom: auto;
 
 	@media (min-width: 501px) {
 		display: ${props => (props.small ? 'none' : 'flex')};
@@ -46,7 +48,7 @@ export default function CurrentCard(props) {
 					<span className="current-card-temp">{displayTemp}&#176;</span>
 					<BannerItem
 						title="Feels Like"
-						body={apparentTemperature.toFixed(0)}
+						body={`${apparentTemperature.toFixed(0)}\u00b0`}
 					/>
 				</div>
 				<Banner flexDirection="column">

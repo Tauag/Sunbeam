@@ -3,6 +3,7 @@
 	flex-direction: column;
 	max-width: 550px;
 	animation: easein 1s;
+	width: 50%;
 }
 
 .current-card-wrapper {
@@ -10,7 +11,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	border: #e0e0e0 1px solid;
 	border-radius: 10px;
 	width: 100%;
@@ -60,9 +61,6 @@
 	.current-card-wrapper {
 		height: 175px;
 	}
-	.current-card-set {
-		width: 50%;
-	}
 }
 @media screen and (max-width: 768px) {
 	.current-card-wrapper {
@@ -79,6 +77,13 @@
 	}
 	.current-card-banner-body {
 		font-size: 9pt;
+	}
+	.current-card-banner-component {
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+	.current-card-summary {
+		font-size: 12pt;
 	}
 }
 @media screen and (max-width: 400px) {
