@@ -1,0 +1,100 @@
+.current-card-set {
+	display: flex;
+	flex-direction: column;
+	max-width: 550px;
+	animation: easein 1s;
+}
+
+.current-card-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: #e0e0e0 1px solid;
+	border-radius: 10px;
+	width: 100%;
+	height: 175px;
+}
+
+.current-card-temp {
+	font-size: 48pt;
+	font-weight: 600;
+}
+
+.current-card-weather {
+	font-size: 16pt;
+}
+
+.current-card-info {
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.current-card-banner-component {
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.current-card-banner-body {
+	font-size: 10pt;
+	color: #708090;
+}
+
+.current-card-banner-subtitle {
+	font-weight: 600;
+}
+
+@media screen and (min-width: 900px) {
+	.current-card-wrapper {
+		height: 175px;
+	}
+	.current-card-set {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.current-card-wrapper {
+		height: 150px;
+	}
+	.current-card-set {
+		width: 75%;
+	}
+	.current-card-temp {
+		font-size: 36pt;
+	}
+	.current-card-weather {
+		font-size: 12pt;
+	}
+	.current-card-banner-body {
+		font-size: 9pt;
+	}
+}
+@media screen and (max-width: 400px) {
+	.current-card-wrapper {
+		height: 100px;
+	}
+	.current-card-set {
+		width: 90%;
+	}
+	.current-card-temp {
+		font-size: 24pt;
+	}
+	.current-card-weather {
+		font-size: 12pt;
+	}
+}
+
+@keyframes easein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

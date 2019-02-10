@@ -1,0 +1,34 @@
+{
+	"name": "sunbeam",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@babel/polyfill": "^7.2.5",
+		"axios": "^0.18.0",
+		"normalize.css": "^8.0.1",
+		"prop-types": "^15.6.2",
+		"react": "^16.8.1",
+		"react-dom": "^16.8.1",
+		"react-scripts": "2.1.3",
+		"styled-components": "^4.1.3"
+	},
+	"scripts": {
+		"start": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts start",
+		"build": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts build",
+		"test": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"enzyme": "^3.8.0",
+		"enzyme-adapter-react-16": "^1.8.0"
+	}
+}
