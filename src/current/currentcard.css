@@ -8,12 +8,14 @@
 .current-card-wrapper {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	border: #e0e0e0 1px solid;
 	border-radius: 10px;
 	width: 100%;
 	height: 175px;
+	overflow: hidden;
 }
 
 .current-card-temp {
@@ -21,8 +23,12 @@
 	font-weight: 600;
 }
 
-.current-card-weather {
+.current-card-summary {
+	padding: 2px 0px 2px 0px;
+	width: 100%;
 	font-size: 16pt;
+	background-color: #e65100;
+	color: white;
 }
 
 .current-card-info {
