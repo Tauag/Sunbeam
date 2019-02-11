@@ -2,8 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	max-width: 550px;
-	animation: easein 1s;
-	width: 50%;
+	animation: easein 0.5s;
 }
 
 .current-card-wrapper {

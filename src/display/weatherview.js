@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CurrentCard from '../current/currentcard';
+import HourlyForecast from '../hourly/hourlyforecast';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -25,6 +26,7 @@ export default function WeatherView(props) {
 	return Object.keys(data).length > 0 ? (
 		<Wrapper>
 			<CurrentCard current={data.currently} />
+			<HourlyForecast hourly={data.hourly} />
 		</Wrapper>
 	) : (
 		<Wrapper> No Data </Wrapper>

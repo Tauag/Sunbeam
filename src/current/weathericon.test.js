@@ -81,7 +81,7 @@ describe('Render every possible icon', () => {
 
 	test('Throw Error', () => {
 		expect(() => shallow(<WeatherIcon icon="error" />)).toThrow(
-			Error('error does not exist in icon library')
+			Error('error is not a supported Weather Type')
 		);
 	});
 });

@@ -1,0 +1,65 @@
+.hourly-forecast-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	animation: easein 0.5s;
+	width: 100%;
+}
+
+.hourly-forecast-summary {
+	font-size: 24pt;
+	font-weight: 500;
+	width: 90%;
+}
+
+.hourly-forecast-bar {
+	margin-top: 10px;
+	width: 90%;
+	max-width: 700px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.hourly-forecast-img {
+	height: 100%;
+	margin: auto;
+}
+
+.hourly-forecast-tickmarks {
+	margin-bottom: 10px;
+	width: 90%;
+	height: 10px;
+	max-width: 700px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+	.hourly-forecast-summary {
+		font-size: 18pt;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.hourly-forecast-summary {
+		font-size: 14pt;
+	}
+}
+
+@keyframes easein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
