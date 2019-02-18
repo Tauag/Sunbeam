@@ -52,13 +52,16 @@ export default function CurrentCard(props) {
 					/>
 				</div>
 				<Banner flexDirection="column">
-					<BannerItem title="Humidity" body={`${humidity * 100}%`} />
+					<BannerItem
+						title="Humidity"
+						body={`${(humidity * 100).toFixed(0)}%`}
+					/>
 					<BannerItem title="Wind Speed" body={`${windSpeed.toFixed(0)}mph`} />
 					<BannerItem title="UV Index" body={`${uvIndex}`} />
 				</Banner>
 			</div>
 			<Banner flexDirection="row" small>
-				<BannerItem title="Humidity" body={`${humidity * 100}%`} />
+				<BannerItem title="Humidity" body={`${(humidity * 100).toFixed(0)}%`} />
 				<BannerItem title="Wind Speed" body={`${windSpeed.toFixed(0)}mph`} />
 				<BannerItem title="UV Index" body={`${uvIndex}`} />
 			</Banner>
