@@ -3,14 +3,13 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 25px;
-	margin-bottom: 25px;
 	animation: easein 0.5s;
 	width: 100%;
+	margin-top: 20px;
 }
 
 .hourly-forecast-summary {
-	font-size: 24pt;
+	font-size: 18pt;
 	font-weight: 500;
 	width: 90%;
 }
@@ -45,7 +44,7 @@
 
 @media screen and (max-width: 768px) {
 	.hourly-forecast-summary {
-		font-size: 18pt;
+		font-size: 16pt;
 	}
 }
 

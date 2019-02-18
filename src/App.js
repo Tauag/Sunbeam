@@ -49,7 +49,7 @@ class App extends Component {
 					});
 				})
 				.catch(error => {
-					handleError('darksky', error);
+					this.handleError('darksky', error);
 					reject();
 				});
 		});

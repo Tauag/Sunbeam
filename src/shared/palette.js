@@ -28,7 +28,7 @@ export default function getWeatherPalette(weatherType) {
 				weather: Weather.Snowy,
 				weatherMsg: 'snow',
 				color: '#00e5ff',
-				fontColor: 'white'
+				fontColor: 'black'
 			};
 		case 'sleet':
 			return {

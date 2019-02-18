@@ -8,20 +8,21 @@ const ForecastHour = styled.span`
 	width: ${props => (props.hours / props.maxHours) * 100}%;
 	height: 50px;
 	background-color: ${props => props.color};
+	overflow: hidden;
 `;
 
 const ForecastTicks = styled.span`
 	width: ${props => (1 / props.maxHours) * 100}%;
-	height: 100%;
+	height: ${props => (props.extended ? '100%' : '50%')};
+	align-self: flex-start;
 	margin-left: ${props => (1 / (props.maxHours * 2)) * 100}%;
-	background-color: none;
 	border-left: #7f7f81 1px solid;
 `;
 
-function generateHourlyForecastBar(data, maxHours = 12) {
+export function generateHourlyForecastBar(data, maxHours = 12) {
 	if (data.length < maxHours)
 		throw new Error(
-			`Cannot generate a ${maxHours} forecast bar, data is of length ${
+			`Cannot generate a ${maxHours} hour forecast bar, data is of length ${
 				data.length
 			}`
 		);
@@ -46,7 +47,13 @@ function generateHourlyForecastBar(data, maxHours = 12) {
 					color={color}
 					aria-label={weatherSummary}
 				>
-					<img className="hourly-forecast-img" src={weather} alt={weatherMsg} />
+					{weatherCounter > 1 && (
+						<img
+							className="hourly-forecast-img"
+							src={weather}
+							alt={weatherMsg}
+						/>
+					)}
 				</ForecastHour>
 			);
 
@@ -67,25 +74,33 @@ function generateHourlyForecastBar(data, maxHours = 12) {
 			color={color}
 			aria-label={weatherSummary}
 		>
-			<img className="hourly-forecast-img" src={weather} alt={weatherMsg} />
+			{weatherCounter > 1 && (
+				<img className="hourly-forecast-img" src={weather} alt={weatherMsg} />
+			)}
 		</ForecastHour>
 	);
 
 	return container;
 }
 
-function generateHourlyTickMarks(maxHours = 12) {
+export function generateHourlyTickMarks(maxHours = 12) {
 	const container = [];
 	for (let i = 0; i < maxHours; i++) {
-		container.push(<ForecastTicks key={`tick-${i}`} maxHours={maxHours} />);
+		container.push(
+			<ForecastTicks
+				key={`tick-${i}`}
+				maxHours={maxHours}
+				extended={i % 2 === 0}
+			/>
+		);
 	}
 
 	return container;
 }
 
 export default function HourlyForecast(props) {
-	const forecastContainer = generateHourlyForecastBar(props.hourly.data);
-	const forecastTickMarks = generateHourlyTickMarks();
+	const forecastContainer = generateHourlyForecastBar(props.hourly.data, 24);
+	const forecastTickMarks = generateHourlyTickMarks(24);
 
 	return (
 		<div className="hourly-forecast-wrapper">

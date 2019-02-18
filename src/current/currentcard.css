@@ -3,6 +3,7 @@
 	flex-direction: column;
 	max-width: 550px;
 	animation: easein 0.5s;
+	margin: 20px 0px 20px 0px;
 }
 
 .current-card-wrapper {
