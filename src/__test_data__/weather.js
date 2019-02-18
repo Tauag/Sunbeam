@@ -1773,6 +1773,47 @@ export default {
 			}
 		]
 	},
+	alerts: [
+		{
+			title: 'Special Weather Statement',
+			regions: [
+				'Admiralty Inlet Area',
+				'Bellevue and Vicinity',
+				'Bremerton and Vicinity',
+				'Central Coast',
+				'East Puget Sound Lowlands',
+				'Eastern Strait of Juan de Fuca',
+				'Everett and Vicinity',
+				'Hood Canal Area',
+				'Lower Chehalis Valley Area',
+				'North Coast',
+				'San Juan County',
+				'Seattle and Vicinity',
+				'Southwest Interior',
+				'Tacoma Area',
+				'Western Skagit County',
+				'Western Strait of Juan De Fuca',
+				'Western Whatcom County'
+			],
+			severity: 'advisory',
+			time: 1550353740,
+			expires: 1550448000,
+			description:
+				'...SNOW MELT AND SOME RAIN WILL CONTINUE TO LEAD TO AN INCREASED THREAT OF LANDSLIDES IN WESTERN WASHINGTON THROUGH SUNDAY... There is a continued threat of landslides for the lowlands of western Washington at elevations below about 1500 feet through Sunday. Precipitation combined with melting snow has saturated the soil, and has increased the threat for landslides at elevations below 1500 feet. Melting snow is very efficient at increasing soil moisture and is not well represented in the landslide indices. The threat will decrease Sunday through Monday as drier and cooler air moves into the area. For more information about current conditions, visit www.weather.gov/seattle, select Hydrology, and then scroll down for the links to the landslide information page. For more information about landslides, visit the website for the Washington State Department of Natural Resources landslide geologic hazards at: http://bit.ly/2mtA3wn\n',
+			uri:
+				'https://alerts.weather.gov/cap/wwacapget.php?x=WA125CE6AA5974.SpecialWeatherStatement.125CE6C59680WA.SEWSPSSEW.933a8d8d4ba4229b37ce05de2f8b11bb'
+		},
+		{
+			title: 'Test Data',
+			regions: ['Admiralty Inlet Area'],
+			severity: 'advisory',
+			time: 1550353740,
+			expires: 1550448000,
+			description:
+				'...SNOW MELT AND SOME RAIN WILL CONTINUE TO LEAD TO AN INCREASED THREAT OF LANDSLIDES IN WESTERN WASHINGTON THROUGH SUNDAY... There is a continued threat of landslides for the lowlands of western Washington at elevations below about 1500 feet through Sunday. Precipitation combined with melting snow has saturated the soil, and has increased the threat for landslides at elevations below 1500 feet. Melting snow is very efficient at increasing soil moisture and is not well represented in the landslide indices. The threat will decrease Sunday through Monday as drier and cooler air moves into the area. For more information about current conditions, visit www.weather.gov/seattle, select Hydrology, and then scroll down for the links to the landslide information page. For more information about landslides, visit the website for the Washington State Department of Natural Resources landslide geologic hazards at: http://bit.ly/2mtA3wn\n',
+			uri: 'https://test.data'
+		}
+	],
 	flags: {
 		sources: [
 			'nearest-precip',

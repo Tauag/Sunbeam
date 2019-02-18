@@ -10,7 +10,8 @@ const Banner = styled.div`
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	height: 100%;
+	margin-top: auto;
+	margin-bottom: auto;
 
 	@media (min-width: 501px) {
 		display: ${props => (props.small ? 'none' : 'flex')};
@@ -27,6 +28,7 @@ export function fToC(temp) {
 export default function CurrentCard(props) {
 	const {
 		temperature,
+		apparentTemperature,
 		summary,
 		icon,
 		humidity,
@@ -40,10 +42,14 @@ export default function CurrentCard(props) {
 	return (
 		<div className="current-card-set">
 			<div className="current-card-wrapper">
+				<span className="current-card-summary">{summary}</span>
 				<WeatherIcon icon={icon} />
 				<div className="current-card-info">
 					<span className="current-card-temp">{displayTemp}&#176;</span>
-					<span className="current-card-weather">{summary}</span>
+					<BannerItem
+						title="Feels Like"
+						body={`${apparentTemperature.toFixed(0)}\u00b0`}
+					/>
 				</div>
 				<Banner flexDirection="column">
 					<BannerItem title="Humidity" body={`${humidity * 100}%`} />

@@ -1,0 +1,99 @@
+.hourly-forecast-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	animation: easein 0.5s;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.hourly-forecast-summary {
+	font-size: 18pt;
+	font-weight: 500;
+	width: 90%;
+	max-width: 700px;
+}
+
+.hourly-forecast-bar {
+	margin-top: 15px;
+	width: 90%;
+	max-width: 700px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.hourly-forecast-tickmarks {
+	margin-bottom: 10px;
+	width: 90%;
+	height: 10px;
+	max-width: 700px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.hourly-forcast-timestamps {
+	width: 90%;
+	max-width: 700px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.hourly-timestamp-time {
+	font-weight: 600;
+	font-size: 12pt;
+}
+
+.hourly-timestamp-temp {
+	font-size: 12pt;
+}
+
+@media screen and (max-width: 768px) {
+	.hourly-forecast-summary {
+		font-size: 16pt;
+	}
+	.hourly-timestamp-time {
+		font-size: 11pt;
+	}
+	.hourly-timestamp-temp {
+		font-size: 11pt;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.hourly-timestamp-time {
+		font-size: 8pt;
+	}
+	.hourly-timestamp-temp {
+		font-size: 8pt;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.hourly-forecast-summary {
+		font-size: 14pt;
+	}
+	.hourly-timestamp-time {
+		font-size: 6pt;
+	}
+	.hourly-timestamp-temp {
+		font-size: 6pt;
+	}
+}
+
+@keyframes easein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

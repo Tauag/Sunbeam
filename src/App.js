@@ -41,19 +41,17 @@ class App extends Component {
 		const { lat, lng } = coordinates;
 
 		return new Promise((resolve, reject) => {
-			axios(
-				`${process.env.REACT_APP_SUNBEAMAPI}/weather?lat=${lat}&lng=${lng}`
-			).then(
-				response => {
+			axios(`${process.env.REACT_APP_SUNBEAMAPI}/weather?lat=${lat}&lng=${lng}`)
+				.then(response => {
 					const data = response.data;
 					this.setState({ data, coordinates }, () => {
 						resolve();
 					});
-				},
-				error => {
+				})
+				.catch(error => {
+					this.handleError('darksky', error);
 					reject();
-				}
-			);
+				});
 		});
 	}
 

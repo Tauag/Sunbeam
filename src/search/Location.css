@@ -7,12 +7,6 @@
 	width: 50%;
 }
 
-@media screen and (min-width: 900px) {
-	.location-form-wrapper {
-		width: 50%;
-	}
-}
-
 @media screen and (max-width: 768px) {
 	.location-form-wrapper {
 		width: 75%;
@@ -41,6 +35,10 @@
 	border-radius: 10px;
 	cursor: pointer;
 	background-color: white;
+}
+
+.location-detect-location:focus {
+	outline: none;
 }
 
 .location-detect-location:active {
