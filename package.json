@@ -17,7 +17,7 @@
 		"start": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts start",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build",
-		"build": "REACT_APP_SUNBEAMAPI=http://68.183.115.153/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts build",
+		"build": "REACT_APP_SUNBEAMAPI=https://68.183.115.153/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts build",
 		"test": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts test",
 		"eject": "react-scripts eject"
 	},
