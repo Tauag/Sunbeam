@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Sunbeam/precache-manifest.4cbf84f5399f32719479dfc60792f684.js"
+  "/Sunbeam/precache-manifest.2408418d44fc3d743bcde2209656ec74.js"
 );
 
 workbox.clientsClaim();
