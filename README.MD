@@ -1,3 +1,5 @@
+![build status](https://travis-ci.com/Tauag/Sunbeam.svg?branch=master)
+
 # Intro
 
 Sunbeam (_Working Title_) is a weather app designed for clarity and simplicity. I took design inspiration from Google's Material UI guidelines and incorporated it to an application that is great at conveying just the weather data that you want to know everyday.
