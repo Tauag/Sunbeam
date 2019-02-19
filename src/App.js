@@ -14,7 +14,9 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.handleDarkSkyCall(this.state.coordinates);
+		this.handleDarkSkyCall(this.state.coordinates).catch(error => {
+			return true;
+		});
 	}
 
 	setLatLng = coordinates => {
@@ -28,7 +30,7 @@ class App extends Component {
 	};
 
 	handleError = (errorSource, errorObj) => {
-		return true;
+		return true; // placeholder
 		// Need to display some sort of error message on the application
 		// geocode
 		// geolocate

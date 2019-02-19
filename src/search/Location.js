@@ -78,7 +78,9 @@ export default class Location extends Component {
 
 	handleDetectLocation = () => {
 		if (this.state.busy) return;
-		this.handleIPStackCall();
+		this.handleIPStackCall().catch(e => {
+			return true;
+		});
 	};
 
 	onChange = e => {
@@ -96,7 +98,9 @@ export default class Location extends Component {
 		e.preventDefault();
 		if (this.state.busy) return;
 		this.setState({ busy: true }, () => {
-			this.handleGeoCodeCall();
+			this.handleGeoCodeCall().catch(e => {
+				return true;
+			});
 		});
 	};
 
