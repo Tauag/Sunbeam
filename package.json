@@ -14,11 +14,11 @@
 		"styled-components": "^4.1.3"
 	},
 	"scripts": {
-		"start": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts start",
+		"start": "REACT_APP_SUNBEAMAPI=https://68.183.115.153/api react-scripts start",
 		"predeploy": "cross-env GENERATE_SOURCEMAP=false npm run build",
 		"deploy": "gh-pages -d build",
-		"build": "REACT_APP_SUNBEAMAPI=https://68.183.115.153/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts build",
-		"test": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api REACT_APP_IPSTACKKEY=75261f3113f0439c27a6c4df5b9e42bf react-scripts test",
+		"build": "REACT_APP_SUNBEAMAPI=https://68.183.115.153/api react-scripts build",
+		"test": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api react-scripts test",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {

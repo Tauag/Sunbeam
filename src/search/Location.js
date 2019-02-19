@@ -17,8 +17,8 @@ export default class Location extends Component {
 	setGeoData = (address, coordinates, callback) => {
 		this.setState({ address: address, busy: false }, () => {
 			this.props.setCoordinates(coordinates);
+			if (callback) callback();
 		});
-		if (callback) callback();
 	};
 
 	handleGeoCodeCall = () => {
@@ -43,6 +43,7 @@ export default class Location extends Component {
 					}
 				})
 				.catch(error => {
+					this.setState({ busy: false, address: 'Error' });
 					this.props.onError('geocode', error);
 					reject();
 				});
@@ -52,11 +53,7 @@ export default class Location extends Component {
 	handleIPStackCall = () => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get(
-					`http://api.ipstack.com/check?access_key=${
-						process.env.REACT_APP_IPSTACKKEY
-					}`
-				)
+				.get(`${process.env.REACT_APP_SUNBEAMAPI}/find_ip`)
 				.then(response => {
 					const data = response.data;
 					const formattedAddress = `${data.city}, ${data.region_code}, ${
@@ -72,6 +69,7 @@ export default class Location extends Component {
 					);
 				})
 				.catch(error => {
+					this.setState({ busy: false, address: 'Error' });
 					this.props.onError('ipstack', error);
 					reject();
 				});
