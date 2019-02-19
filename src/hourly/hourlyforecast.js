@@ -154,7 +154,7 @@ export function generateTimestamps(data, maxHours = 12, tickMarks = 12) {
 				key={`timestamp-${i}`}
 				maxTicks={tickMarks}
 				time={`${hour}${merdiem}`}
-				temp={`${data[0].temperature.toFixed(0)}\u00b0`}
+				temp={`${data[i].temperature.toFixed(0)}\u00b0`}
 			/>
 		);
 	}
