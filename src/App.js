@@ -14,7 +14,9 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.handleDarkSkyCall(this.state.coordinates);
+		this.handleDarkSkyCall(this.state.coordinates).catch(error => {
+			return true;
+		});
 	}
 
 	setLatLng = coordinates => {
@@ -28,7 +30,7 @@ class App extends Component {
 	};
 
 	handleError = (errorSource, errorObj) => {
-		console.log(errorObj);
+		return true; // placeholder
 		// Need to display some sort of error message on the application
 		// geocode
 		// geolocate
@@ -44,9 +46,7 @@ class App extends Component {
 			axios(`${process.env.REACT_APP_SUNBEAMAPI}/weather?lat=${lat}&lng=${lng}`)
 				.then(response => {
 					const data = response.data;
-					this.setState({ data, coordinates }, () => {
-						resolve();
-					});
+					this.setState({ data, coordinates }, () => resolve());
 				})
 				.catch(error => {
 					this.handleError('darksky', error);
