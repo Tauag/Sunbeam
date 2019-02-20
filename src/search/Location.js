@@ -5,7 +5,7 @@ import SearchForm from './SearchForm';
 import MyLocation from '../icons/MyLocation';
 import './Location.css';
 
-function checkIPStackObject(data) {
+export function checkIPStackObject(data) {
 	const { city, region_code, country_code, latitude, longitude } = data;
 	const toBeCheckedArray = [
 		city,

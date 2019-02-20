@@ -46,6 +46,11 @@ class App extends Component {
 			axios(`${process.env.REACT_APP_SUNBEAMAPI}/weather?lat=${lat}&lng=${lng}`)
 				.then(response => {
 					const data = response.data;
+					if (data.status && data.status === 'FAILED') {
+						this.handleError('darksky', error);
+						reject();
+						return;
+					}
 					this.setState({ data, coordinates }, () => resolve());
 				})
 				.catch(error => {
