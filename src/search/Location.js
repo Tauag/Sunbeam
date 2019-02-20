@@ -5,6 +5,22 @@ import SearchForm from './SearchForm';
 import MyLocation from '../icons/MyLocation';
 import './Location.css';
 
+function checkIPStackObject(data) {
+	const { city, region_code, country_code, latitude, longitude } = data;
+	const toBeCheckedArray = [
+		city,
+		region_code,
+		country_code,
+		latitude,
+		longitude
+	];
+
+	for (let i in toBeCheckedArray)
+		if (toBeCheckedArray[i] === null) return false;
+
+	return true;
+}
+
 export default class Location extends Component {
 	constructor(props) {
 		super(props);
@@ -13,6 +29,11 @@ export default class Location extends Component {
 			busy: false
 		};
 	}
+
+	setError = (apiName, errorData) => {
+		this.setState({ busy: false, address: 'Error' });
+		this.props.onError(apiName, errorData);
+	};
 
 	setGeoData = (address, coordinates, callback) => {
 		this.setState({ address: address, busy: false }, () => {
@@ -38,13 +59,12 @@ export default class Location extends Component {
 							resolve
 						);
 					} else {
-						this.props.onError('geocode', response.data);
+						this.setError('geocode', response.data);
 						reject();
 					}
 				})
 				.catch(error => {
-					this.setState({ busy: false, address: 'Error' });
-					this.props.onError('geocode', error);
+					this.setError('geocode', error);
 					reject();
 				});
 		});
@@ -56,6 +76,16 @@ export default class Location extends Component {
 				.get(`${process.env.REACT_APP_SUNBEAMAPI}/find_ip`)
 				.then(response => {
 					const data = response.data;
+
+					if (
+						(data.status && data.status === 'FAILED') ||
+						!checkIPStackObject(data)
+					) {
+						this.setError('ipstack', data);
+						reject();
+						return;
+					}
+
 					const formattedAddress = `${data.city}, ${data.region_code}, ${
 						data.country_code
 					}`;
@@ -69,8 +99,7 @@ export default class Location extends Component {
 					);
 				})
 				.catch(error => {
-					this.setState({ busy: false, address: 'Error' });
-					this.props.onError('ipstack', error);
+					this.setError('ipstack', error);
 					reject();
 				});
 		});
