@@ -3,5 +3,8 @@ node_js:
   - 'node'
 cache:
   yarn: true
-script:
-  - npm test a
+jobs:
+  include:
+    - script: npm test a
+    - if: type = push AND branch = master
+      - script: npm run deploy
