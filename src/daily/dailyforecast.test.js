@@ -21,6 +21,17 @@ describe('Render DailyForecast and DailyWeather', () => {
 	});
 });
 
+describe('Test DailyForecast has rendered correctly', () => {
+	const wrapper = shallow(<DailyForecast daily={WeatherData.daily} />);
+
+	test('Contains the correct amount of DailyContainers', () => {
+		expect(wrapper.children()).toHaveLength(7);
+		wrapper.map((child, index) => {
+			expect(child.prop('data')).toBe(WeatherData.daily[index]);
+		});
+	});
+});
+
 describe('Test generator and support functions', () => {
 	test('Test generator function', () => {
 		var container = generateDailyForecast(WeatherData.daily.data, 1);
