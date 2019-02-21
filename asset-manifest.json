@@ -1,10 +1,10 @@
 {
-  "main.css": "/Sunbeam/static/css/main.94f95ddc.chunk.css",
-  "main.js": "/Sunbeam/static/js/main.736519ed.chunk.js",
+  "main.css": "/Sunbeam/static/css/main.8ae95dba.chunk.css",
+  "main.js": "/Sunbeam/static/js/main.e6972741.chunk.js",
   "runtime~main.js": "/Sunbeam/static/js/runtime~main.d168d98f.js",
-  "static/js/2.771f4f1a.chunk.js": "/Sunbeam/static/js/2.771f4f1a.chunk.js",
+  "static/js/2.719b10c9.chunk.js": "/Sunbeam/static/js/2.719b10c9.chunk.js",
   "index.html": "/Sunbeam/index.html",
-  "precache-manifest.e36cecb0bce71f0fb705acc4b9378579.js": "/Sunbeam/precache-manifest.e36cecb0bce71f0fb705acc4b9378579.js",
+  "precache-manifest.322bdab099e586b08f6000a6419f8917.js": "/Sunbeam/precache-manifest.322bdab099e586b08f6000a6419f8917.js",
   "service-worker.js": "/Sunbeam/service-worker.js",
   "static/media/Cloud-Fog.svg": "/Sunbeam/static/media/Cloud-Fog.3694ef67.svg",
   "static/media/Cloud-Hail.svg": "/Sunbeam/static/media/Cloud-Hail.f4e14d44.svg",
@@ -18,5 +18,7 @@
   "static/media/Snowflake.svg": "/Sunbeam/static/media/Snowflake.eace860f.svg",
   "static/media/Sun.svg": "/Sunbeam/static/media/Sun.53f709c5.svg",
   "static/media/Tornado.svg": "/Sunbeam/static/media/Tornado.b6e81ba5.svg",
+  "static/media/UnfoldLess.svg": "/Sunbeam/static/media/UnfoldLess.dd4f6b9a.svg",
+  "static/media/UnfoldMore.svg": "/Sunbeam/static/media/UnfoldMore.219618be.svg",
   "static/media/Wind.svg": "/Sunbeam/static/media/Wind.6b4d1006.svg"
 }

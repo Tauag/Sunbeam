@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "736519ed1f475b5be379",
-    "url": "/Sunbeam/static/css/main.94f95ddc.chunk.css"
+    "revision": "e697274178eebc79c829",
+    "url": "/Sunbeam/static/css/main.8ae95dba.chunk.css"
   },
   {
-    "revision": "736519ed1f475b5be379",
-    "url": "/Sunbeam/static/js/main.736519ed.chunk.js"
+    "revision": "e697274178eebc79c829",
+    "url": "/Sunbeam/static/js/main.e6972741.chunk.js"
   },
   {
     "revision": "d168d98f7057d7a4cbc5",
     "url": "/Sunbeam/static/js/runtime~main.d168d98f.js"
   },
   {
-    "revision": "771f4f1ae1fe0fcb3733",
-    "url": "/Sunbeam/static/js/2.771f4f1a.chunk.js"
+    "revision": "719b10c9cede4ef5052a",
+    "url": "/Sunbeam/static/js/2.719b10c9.chunk.js"
   },
   {
     "revision": "3694ef67610075498c91cdb7b2bfb2f4",
@@ -68,7 +68,15 @@ self.__precacheManifest = [
     "url": "/Sunbeam/static/media/Cloud-Hail.f4e14d44.svg"
   },
   {
-    "revision": "02fd19ce1fa618a8c919f6b9ac644261",
+    "revision": "dd4f6b9abdc443feb0d72934dc7fb488",
+    "url": "/Sunbeam/static/media/UnfoldLess.dd4f6b9a.svg"
+  },
+  {
+    "revision": "219618be7a226815a11bb981f0a5e2f2",
+    "url": "/Sunbeam/static/media/UnfoldMore.219618be.svg"
+  },
+  {
+    "revision": "f9b1f78144e926352e1c1a6ebf3d5edc",
     "url": "/Sunbeam/index.html"
   }
 ];
