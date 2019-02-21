@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Location from './Location';
+import Location, { checkIPStackObject } from './Location';
+import { IPStackData } from '../__test_data__';
 
 describe('Render and Value Tests for Location', () => {
 	var coordinates = { lat: 0, lng: 0 };
@@ -64,5 +65,23 @@ describe('Render and Value Tests for Location', () => {
 			}
 		);
 		expect.assertions(4);
+	});
+});
+
+describe('IPStack Error Check Function', () => {
+	test('Valid Data', () => {
+		expect(checkIPStackObject(IPStackData)).toBe(true);
+	});
+
+	test('Invalid Data', () => {
+		const invalidTestData = {
+			city: null,
+			region_code: null,
+			country_code: null,
+			latitude: null,
+			longitude: null
+		};
+
+		expect(checkIPStackObject(invalidTestData)).toBe(false);
 	});
 });

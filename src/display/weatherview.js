@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import CurrentCard from '../current/currentcard';
 import Alert from '../alert/alert';
 import HourlyForecast from '../hourly/hourlyforecast';
+import DailyForecast from '../daily/dailyforecast';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -29,6 +30,7 @@ export default function WeatherView(props) {
 			<Alert alerts={data.alerts} />
 			<CurrentCard current={data.currently} />
 			<HourlyForecast hourly={data.hourly} />
+			<DailyForecast daily={data.daily} />
 		</Wrapper>
 	) : (
 		<Wrapper> No Data </Wrapper>
