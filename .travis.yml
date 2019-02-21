@@ -3,7 +3,7 @@ node_js:
   - 'node'
 cache:
   yarn: true
-github-token: SUNBEAM-DEPLOY
+github-token: $SUNBEAM-DEPLOY
 jobs:
   include:
     - stage: test
