@@ -4,6 +4,8 @@
 	align-items: center;
 	width: 90%;
 	max-width: 700px;
+	padding-top: 25px;
+	border-top: #e0e0e0 1px solid;
 	margin-top: 25px;
 	animation: easein 0.5s;
 }
