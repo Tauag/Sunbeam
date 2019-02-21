@@ -16,4 +16,6 @@ jobs:
       script: npm test a
     - stage: deploy
       if: type = push AND branch = master
-      script: npm run deploy
+      script:
+        - git config --global user.email "dev.gavin.li@gmail.com"
+        - npm run deploy
