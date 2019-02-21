@@ -47,7 +47,7 @@ class App extends Component {
 				.then(response => {
 					const data = response.data;
 					if (data.status && data.status === 'FAILED') {
-						this.handleError('darksky', error);
+						this.handleError('darksky', response.data);
 						reject();
 						return;
 					}
