@@ -32,6 +32,25 @@ describe('Test DailyForecast has rendered correctly', () => {
 	});
 });
 
+describe('Test DailyContainer has rendered correctly', () => {
+	const wrapper = shallow(<DailyContainer data={WeatherData.daily.data[0]} />);
+
+	test('Test if img is correct', () => {
+		expect(wrapper.find('.daily-forecast-img').prop('alt')).toBe('rain');
+	});
+
+	test('Test day', () => {
+		expect(wrapper.find('.daily-forecast-day').text()).toBe('Wed');
+	});
+
+	test('Check the temperature', () => {
+		const temps = wrapper.find('.daily-forecast-detail-text');
+		expect(temps).toHaveLength(2);
+		expect(temps.first().text()).toBe('35\u00b0');
+		expect(temps.at(1).text()).toBe('44\u00b0');
+	});
+});
+
 describe('Test generator and support functions', () => {
 	test('Test generator function', () => {
 		var container = generateDailyForecast(WeatherData.daily.data, 1);
