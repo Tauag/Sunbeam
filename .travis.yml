@@ -3,6 +3,7 @@ node_js:
   - 'node'
 cache:
   yarn: true
+github-token: SUNBEAM-DEPLOY
 jobs:
   include:
     - script: npm test a
