@@ -1,0 +1,38 @@
+{
+	"name": "sunbeam",
+	"homepage": "https://tauag.github.io/Sunbeam/",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@babel/polyfill": "^7.2.5",
+		"axios": "^0.18.0",
+		"normalize.css": "^8.0.1",
+		"prop-types": "^15.6.2",
+		"react": "^16.8.1",
+		"react-dom": "^16.8.1",
+		"react-scripts": "^2.1.5",
+		"styled-components": "^4.1.3"
+	},
+	"scripts": {
+		"start": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api react-scripts start",
+		"predeploy": "GENERATE_SOURCEMAP=false npm run build",
+		"deploy": "gh-pages -d build",
+		"build": "REACT_APP_SUNBEAMAPI=https://68.183.115.153/api react-scripts build",
+		"test": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"enzyme": "^3.8.0",
+		"enzyme-adapter-react-16": "^1.8.0",
+		"gh-pages": "^2.0.1"
+	}
+}
