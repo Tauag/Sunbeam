@@ -5,6 +5,8 @@ cache:
   yarn: true
 jobs:
   include:
-    - script: npm test a
-    - if: type = push AND branch = master
-      - script: npm run deploy
+    - stage: test
+      script: npm test a
+    - stage: deploy
+      if: type = push AND branch = master
+      script: npm run deploy
