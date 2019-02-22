@@ -1,16 +1,3 @@
-language: node_js
-node_js:
-  - 'node'
-cache:
-  yarn: true
-deploy:
-  script: npm run deploy
-  provider: pages
-  github-token: $SUNBEAM_DEPLOY # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  on:
-    branch: travis
-jobs:
-  include:
-    - stage: test
-      script: npm test a
+branches:
+  except:
+    - gh-pages
