@@ -6,7 +6,6 @@ cache:
 deploy:
   script: npm run deploy
   provider: pages
-  skip-cleanup: true
   github-token: $SUNBEAM_DEPLOY # Set in the settings page of your repository, as a secure variable
   keep-history: true
   on:
