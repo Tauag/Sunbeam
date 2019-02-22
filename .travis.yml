@@ -7,9 +7,3 @@ jobs:
   include:
     - stage: test
       script: npm test a
-    - stage: deploy
-      if: type = push AND branch = master
-      skip-cleanup: true
-      github-token: $SUNBEAM_DEPLOY
-      keep-history: true
-      script: npm run deploy
