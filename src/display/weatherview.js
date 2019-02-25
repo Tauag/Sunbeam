@@ -17,19 +17,21 @@ const Wrapper = styled.div`
 	overflow: hidden;
 `;
 
-export default function WeatherView(props) {
-	const data = props.data;
+const HourlyWrapper = styled.div`
+	width: 90%;
+	max-width: 900px;
+`;
 
-	// function convertUnixToDate(unixTime) {
-	// 	const date = new Date(unixTime * 1000);
-	// 	return date.toLocaleDateString();
-	// }
+function WeatherView(props) {
+	const data = props.data;
 
 	return Object.keys(data).length > 0 ? (
 		<Wrapper>
 			<Alert alerts={data.alerts} />
 			<CurrentCard current={data.currently} />
-			<HourlyForecast hourly={data.hourly} />
+			<HourlyWrapper>
+				<HourlyForecast hourly={data.hourly} />
+			</HourlyWrapper>
 			<DailyForecast daily={data.daily} />
 		</Wrapper>
 	) : (
@@ -40,3 +42,5 @@ export default function WeatherView(props) {
 WeatherView.propTypes = {
 	data: PropTypes.object.isRequired
 };
+
+export default WeatherView;

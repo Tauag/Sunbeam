@@ -170,14 +170,16 @@ function Timestamp(props) {
 	);
 }
 
-export default function HourlyForecast(props) {
+function HourlyForecast(props) {
 	const forecastContainer = generateHourlyForecastBar(props.hourly.data, 24);
 	const forecastTickMarks = generateHourlyTickMarks(24);
 	const forcastTimestamps = generateTimestamps(props.hourly.data, 24, 24);
 
 	return (
 		<div className="hourly-forecast-wrapper">
-			<span className="hourly-forecast-summary">{props.hourly.summary}</span>
+			{!props.disableSummary && (
+				<span className="hourly-forecast-summary">{props.hourly.summary}</span>
+			)}
 			<div className="hourly-forecast-bar">{forecastContainer}</div>
 			<div className="hourly-forecast-tickmarks">{forecastTickMarks}</div>
 			<div className="hourly-forcast-timestamps">{forcastTimestamps}</div>
@@ -195,5 +197,12 @@ HourlyForecast.propTypes = {
 				temperature: PropTypes.number.isRequired
 			})
 		)
-	}).isRequired
+	}).isRequired,
+	disableSummary: PropTypes.bool
 };
+
+HourlyForecast.defaultProps = {
+	disableSummary: false
+};
+
+export default HourlyForecast;

@@ -1,0 +1,49 @@
+.daily-detail-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: inherit;
+}
+
+.daily-detail-summary {
+	font-size: inherit;
+	margin: 20px 0px 25px 0px;
+}
+
+.daily-detail-banner {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.daily-detail-header {
+	font-size: 12pt;
+	font-weight: 600;
+}
+
+.daily-detail-body {
+	font-size: inherit;
+	font-weight: 500;
+	margin-left: 3px;
+}
+
+.daily-detail-hourly-wrapper {
+	overflow: hidden;
+	margin-bottom: 20px;
+	max-width: 700px;
+	width: 100%;
+	align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+	.daily-detail-header {
+		font-size: 10pt;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.daily-detail-header {
+		font-size: 8pt;
+	}
+}
