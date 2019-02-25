@@ -1,23 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Transition } from 'react-transition-group';
+import DailyForecastDetail from './dailyforecastdetails';
 import getWeatherPalette from '../shared/palette';
-import { UnfoldMore } from '../icons/index';
+import { UnfoldMore, UnfoldLess } from '../icons/index';
 import './dailyforecast.css';
 
-export function generateDailyForecast(data, days = 7) {
+const DetailContainer = styled.div`
+	width: 100%;
+	height: 65px;
+	display: flex;
+	flex-flow: row nowrap;
+	border-radius: 10px;
+	overflow: hidden;
+	font-size: 12pt;
+	background-color: ${props => (props.expanded ? '#e0e0e0' : '#fff')};
+
+	&:hover {
+		background-color: #e0e0e0;
+	}
+`;
+
+export function generateDailyForecast(daily, days = 7) {
 	if (days < 1)
 		throw new Error("Cannot generate less than one days' worth of forecasts");
-	if (data.length < days)
+	if (daily.length < days)
 		throw new Error(
 			`Cannot parse ${days} days of data, array only contains ${
-				data.length
+				daily.length
 			} entries`
 		);
 
 	const container = [];
 	for (let i = 1; i <= days; i++) {
 		container.push(
-			<DailyContainer key={`daily-weather-${i}`} data={data[i]} />
+			<DailyContainer key={`daily-weather-${i}`} day={daily[i]} />
 		);
 	}
 
@@ -47,9 +65,11 @@ export function getDay(timestamp) {
 	}
 }
 
-export default function DailyForecast(props) {
+function DailyForecast(props) {
 	const dailyForecast = generateDailyForecast(props.daily.data, 7);
-	return <div className="daily-forecast-wrapper">{dailyForecast}</div>;
+	return props.daily.data ? (
+		<div className="daily-forecast-wrapper">{dailyForecast}</div>
+	) : null;
 }
 
 DailyForecast.propTypes = {
@@ -64,6 +84,7 @@ DailyForecast.propTypes = {
 				precipProbability: PropTypes.number.isRequired,
 				temperatureMin: PropTypes.number.isRequired,
 				temperatureMax: PropTypes.number.isRequired,
+				uvIndex: PropTypes.number.isRequired,
 				precipType: PropTypes.string
 			})
 		)
@@ -71,33 +92,56 @@ DailyForecast.propTypes = {
 };
 
 export function DailyContainer(props) {
-	const { weather, weatherMsg } = getWeatherPalette(props.data.icon);
-	const day = getDay(props.data.time);
+	const [expanded, setExpanded] = useState(false);
+	const { weather, weatherMsg } = getWeatherPalette(props.day.icon);
+	const day = getDay(props.day.time);
+
 	return (
-		<div className="daily-forecast-container" aria-label="Click to see details">
-			<img className="daily-forecast-img" src={weather} alt={weatherMsg} />
-			<span className="daily-forecast-day daily-forecast-text">{day}</span>
-			<div className="daily-forecast-details">
-				<span className="daily-forecast-detail-header">
-					{'Low of: '}
-					<span className="daily-forecast-detail-text">
-						{`${props.data.temperatureMin.toFixed(0)}\u00b0`}
+		<div className="daily-forecast-detail-wrapper">
+			<DetailContainer
+				expanded={expanded}
+				aria-label="Click to see details"
+				onClick={() => {
+					setExpanded(!expanded);
+				}}
+			>
+				<img className="daily-forecast-img" src={weather} alt={weatherMsg} />
+				<span className="daily-forecast-day daily-forecast-text">{day}</span>
+				<div className="daily-forecast-details">
+					<span className="daily-forecast-detail-header">
+						{'Low of: '}
+						<span className="daily-forecast-detail-text">
+							{`${props.day.temperatureMin.toFixed(0)}\u00b0`}
+						</span>
 					</span>
-				</span>
 
-				<span className="daily-forecast-detail-header">
-					{'High of: '}
-					<span className="daily-forecast-detail-text">
-						{`${props.data.temperatureMax.toFixed(0)}\u00b0`}
+					<span className="daily-forecast-detail-header">
+						{'High of: '}
+						<span className="daily-forecast-detail-text">
+							{`${props.day.temperatureMax.toFixed(0)}\u00b0`}
+						</span>
 					</span>
-				</span>
 
-				<img
-					className="daily-forecast-detail-unfold"
-					src={UnfoldMore}
-					alt="click to see details"
-				/>
-			</div>
+					{expanded ? (
+						<img
+							className="daily-forecast-detail-unfold"
+							src={UnfoldLess}
+							alt="click to close details"
+						/>
+					) : (
+						<img
+							className="daily-forecast-detail-unfold"
+							src={UnfoldMore}
+							alt="click to see details"
+						/>
+					)}
+				</div>
+			</DetailContainer>
+			<Transition in={expanded} timeout={500}>
+				{state => <DailyForecastDetail show={state} day={props.day} />}
+			</Transition>
 		</div>
 	);
 }
+
+export default DailyForecast;

@@ -3,7 +3,8 @@ import { shallow } from 'enzyme';
 import WeatherView from './weatherview';
 import Alert from '../alert/alert';
 import CurrentCard from '../current/currentcard';
-import HourlyForcast from '../hourly/hourlyforecast';
+import HourlyForecast from '../hourly/hourlyforecast';
+import DailyForecast from '../daily/dailyforecast';
 import { WeatherData } from '../__test_data__';
 
 describe('Render WeatherView', () => {
@@ -24,9 +25,19 @@ describe('Render WeatherView', () => {
 		expect(wrapper.childAt(1).type()).toBe(CurrentCard);
 	});
 
-	test('Render HourlyForcast Correctly', () => {
+	test('Render HourlyForecast Correctly', () => {
 		wrapper = shallow(<WeatherView data={WeatherData} />);
-		expect(wrapper.childAt(2).type()).toBe(HourlyForcast);
+		expect(
+			wrapper
+				.childAt(2)
+				.childAt(0)
+				.type()
+		).toBe(HourlyForecast);
+	});
+
+	test('Render DailyForecast Correctly', () => {
+		wrapper = shallow(<WeatherView data={WeatherData} />);
+		expect(wrapper.childAt(3).type()).toBe(DailyForecast);
 	});
 
 	test('No Data', () => {

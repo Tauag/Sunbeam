@@ -1,14 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import HourlyForcast, {
+import { shallow, mount } from 'enzyme';
+import HourlyForecast, {
 	generateHourlyTickMarks,
 	generateHourlyForecastBar
 } from './hourlyforecast';
 import { WeatherData } from '../__test_data__';
 
-describe('Render HourlyForcast', () => {
-	test('Render HourlyForcast', () => {
-		const wrapper = shallow(<HourlyForcast hourly={WeatherData.hourly} />);
+describe('Render HourlyForecast', () => {
+	test('Render HourlyForecast', () => {
+		const wrapper = shallow(<HourlyForecast hourly={WeatherData.hourly} />);
 		expect(wrapper.exists()).toBe(true);
 	});
 });
@@ -45,7 +45,7 @@ describe('Test generation functions', () => {
 });
 
 describe('HourlyForcast renders content correctly', () => {
-	const wrapper = shallow(<HourlyForcast hourly={WeatherData.hourly} />);
+	const wrapper = shallow(<HourlyForecast hourly={WeatherData.hourly} />);
 
 	test('Summary rendered correctly', () => {
 		expect(wrapper.childAt(0).text()).toBe('Rain throughout the day.');
@@ -64,5 +64,17 @@ describe('HourlyForcast renders content correctly', () => {
 	test('Correct number of hourly tickmarks are rendered', () => {
 		let ticks = wrapper.childAt(2);
 		expect(ticks.children().length).toBe(24);
+	});
+
+	test('When disableSummary is set, summary does not appear', () => {
+		expect(wrapper.childAt(0).prop('className')).toBe(
+			'hourly-forecast-summary'
+		);
+		const noSummary = shallow(
+			<HourlyForecast disableSummary hourly={WeatherData.hourly} />
+		);
+		expect(noSummary.childAt(0).prop('className')).not.toBe(
+			'hourly-forecast-summary'
+		);
 	});
 });

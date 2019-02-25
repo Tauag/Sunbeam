@@ -25,7 +25,7 @@ export function fToC(temp) {
 	return ((temp - 32) * (5 / 9)).toFixed(0);
 }
 
-export default function CurrentCard(props) {
+function CurrentCard(props) {
 	const {
 		temperature,
 		apparentTemperature,
@@ -100,3 +100,5 @@ BannerItem.propTypes = {
 	title: PropTypes.string.isRequired,
 	body: PropTypes.string.isRequired
 };
+
+export default CurrentCard;
