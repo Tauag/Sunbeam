@@ -1,9 +1,15 @@
 language: node_js
 node_js:
   - '10'
+install:
+  - npm install -g codecov
+script:
+  - codecov
 cache:
   yarn: true
 jobs:
   include:
     - stage: test
-      script: npm test a
+      script:
+        - npm test a
+        - codecov
