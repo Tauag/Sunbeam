@@ -1,4 +1,5 @@
 ![build status](https://travis-ci.com/Tauag/Sunbeam.svg?branch=master)
+![gitter](https://badges.gitter.im/sunbeam-weather/community.svg)
 
 # Intro
 
