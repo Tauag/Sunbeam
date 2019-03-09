@@ -19,7 +19,7 @@
 		"predeploy": "GENERATE_SOURCEMAP=false npm run build",
 		"deploy": "gh-pages -d build",
 		"build": "REACT_APP_SUNBEAMAPI=https://clearsky.dev/api react-scripts build",
-		"test": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api react-scripts test --env=jsdom --coverage",
+		"test": "REACT_APP_SUNBEAMAPI=http://localhost:8080/api react-scripts test --coverage",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
