@@ -2,6 +2,8 @@
 
 # Intro
 
+[![Join the chat at https://gitter.im/sunbeam-weather/community](https://badges.gitter.im/sunbeam-weather/community.svg)](https://gitter.im/sunbeam-weather/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Sunbeam (_Working Title_) is a weather app designed for clarity and simplicity. I borrowed design inspiration from both Google's Material UI guidelines and DarkSky. The intention is to have an application that is great at conveying just the weather data that you want to know everyday.
 
 Powered by [DarkSky](https://darksky.net), one of the best sources for weather data.
