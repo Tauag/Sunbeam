@@ -36,11 +36,5 @@
 		"enzyme": "^3.8.0",
 		"enzyme-adapter-react-16": "^1.8.0",
 		"gh-pages": "^2.0.1"
-	},
-	"jest": {
-		"coverageReporters": [
-			"json",
-			"text"
-		]
 	}
 }

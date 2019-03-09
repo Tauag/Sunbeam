@@ -11,5 +11,5 @@ jobs:
   include:
     - stage: test
       script:
-        - npm test a
+        - npm test
         - codecov
