@@ -2,14 +2,12 @@ language: node_js
 node_js:
   - '11.7.0'
 install:
-  - npm install -g codecov
-script:
-  - codecov
+  - npm install -D codecov
 cache:
   yarn: true
 jobs:
   include:
     - stage: test
       script:
-        - npm test
+        - npm test a
         - codecov
